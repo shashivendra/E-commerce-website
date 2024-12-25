@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Sub Category</title>
+</head>
+<body>
+    <h1>Add Sub Category</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="name">Sub Category Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter Sub category name" required>
+        <br><br>
+        <label for="category">Choose a Category:</label>
+        <select id="category" name="category" required>
+            <option value="">--Select Category--</option>
+            {% for category in categories %}
+                <option value="{{ category.id }}">{{ category.name }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,54 @@
+
+{% block main %}
+<div class="row py-3">
+  <div class="col-md-12 m-auto">
+    <div class="card shadow">
+      <div class="card-header d-flex justify-content-between">
+        <h3 class="card-title fw-semibold">All Category</h3>
+        <a href="{% url 'add_category' %}" class="btn btn-dark">Add Category</a>
+      </div>
+      <div class="card-body border-bottom">
+        <form action="" method="get" up-autosubmit up-follow up-keep up-target="#country_list">
+          <div class="row">
+            <div class="col-sm-6 col-md-2">
+              <div class="mb-3">
+                <input type="text" class="form-control" name="category"
+                       autocomplete="off" placeholder="Name">
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-1">
+              <div class="mb-3 d-flex justify-content-between">
+                <a href="{% url 'category_list' %}"
+                   class="btn btn-outline-blue">
+                  Clear Filters
+                </a>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-vcenter card-table table-striped" id="country_list">
+          <thead>
+          <tr>
+            <th class="w-1">S.N.
+            </th>
+            <th>Category Name</th>
+          </tr>
+          </thead>
+          <tbody>
+          {% for category in categories %}
+          <tr>
+            <td><span class="text-secondary">{{ forloop.counter }}.</span></td>
+            <td>{{ category }}</td>
+          </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="card-footer d-flex align-items-center" up-hungry
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
