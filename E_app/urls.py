@@ -13,8 +13,8 @@ urlpatterns = [
 ]
 
 urlpatterns += [
-    path('', master, name='master'),
-    path('index/', index, name='index'),
+    # path('', master, name='master'),
+    path('', index, name='index'),
     path('register/', register, name='register'),
     path('login/', login, name='login'),
     path('super-admin-dashboard/', SuperAdminDashboardView.as_view(), name='super_admin_dashboard'),
