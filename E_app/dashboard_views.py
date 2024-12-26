@@ -9,7 +9,7 @@ from django.shortcuts import render
 from django.urls import reverse
 from django.views.generic import TemplateView
 
-from .models import Category, SubCategory
+from .models import Category, SubCategory, Product
 
 
 def register(request):
@@ -69,8 +69,10 @@ def master(request):
 
 def index(request):
     category = Category.objects.all()
+    product = Product.objects.all()
     context = {
          'categories': category,
+         'products': product,
 
      }
 

@@ -74,6 +74,19 @@ WSGI_APPLICATION = 'E_shop.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'ecommerce',  # Replace with your database name
+#         'USER': 'root',      # Replace with your database username
+#         'PASSWORD': '',   # Replace with your database password
+#         'HOST': 'localhost',           # Replace with your database host, e.g., '127.0.0.1'
+#         'PORT': '3306',                # Replace with your database port if different
+#     }
+# }
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -122,6 +135,11 @@ STATICFILES_DIRS = [
 
     os.path.join(BASE_DIR, 'static'),
 ]
+
+# for showing media images
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
